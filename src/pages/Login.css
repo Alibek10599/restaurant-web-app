@@ -1,0 +1,19 @@
+body{
+    display: grid;
+   align-items: center;
+   justify-content: center;
+}
+.loginForm{
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   justify-content: center;
+   gap:1.15rem;
+   grid-row: 1 / 3;
+   width: 303px;
+   height: 419px;
+   left: 569px;
+   top: 303px;
+   background: #FAF9FE;
+   margin-top: 7rem;
+}
