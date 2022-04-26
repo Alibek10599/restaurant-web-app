@@ -1,0 +1,58 @@
+.ModalCreate{
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.ModalCreate__buttons{
+    flex-flow: row;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button{
+    background-color: #21D052;
+    color: aliceblue;
+    border: none;
+    width: 6rem;
+    height: 2.25rem;
+    cursor: pointer;
+}
+
+.close{
+    padding: 0.5em;
+    width: 4rem;
+    height: 30px;
+    border: 2px solid rgb(243, 105, 25);
+    color: blue;
+    position: relative;
+    top: 0rem;
+    right: -6rem;
+      
+}
+.close:hover {
+    border: 2px solid blue;
+    background-color: red;
+    color: #ffffff;
+}    
+close::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: blue;
+    width: 2px;
+    left: 12px;
+    top: 5px;
+    bottom: 5px;
+    transform: rotate(45deg);
+  }
+  close::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: blue;
+    height: 2px;
+    top:12px;
+    left: 5px;
+    right: 5px;
+    transform: rotate(45deg);
+  }

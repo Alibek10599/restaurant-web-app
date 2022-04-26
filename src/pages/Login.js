@@ -13,7 +13,7 @@ function Login () {
         <form className="loginForm" onSubmit={onSubmit}>
             <input placeholder="username" type="text"></input>
             <input placeholder="password" type="password"></input>
-            <button to="reserve" type="submit">Sign In</button>
+            <button className='button' to="reserve" type="submit">Sign In</button>
         </form>
     )
 }
