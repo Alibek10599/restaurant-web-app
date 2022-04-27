@@ -25,12 +25,12 @@ function ModalCreate(props) {
                 Seats          {props.seats}
             </section>
             <span className='ModalCreate__buttons'>
-                <button className='button'>Free Table</button>
-                <button className='button'>Reserve</button>
+                <button className='button1'>Free Table</button>
+                <button className='button1'>Reserve</button>
             </span>
             <span className='ModalCreate__buttons'>
-                <button className='button'>Accept Reserve</button>
-                <button className='button'>Reject Reserve</button>
+                <button className='button1'>Accept Reserve</button>
+                <button className='button1'>Reject Reserve</button>
             </span>
         </div>
     )
