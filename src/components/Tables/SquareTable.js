@@ -25,7 +25,8 @@ function SquareTable(props) {
             left: +props.table.coord_x,
             top: +props.table.coord_y,
             height: props.table.height,
-            width: props.table.width
+            width: props.table.width,
+            backgroundColor: props.table.status==="occupied" ? 'red' : 'green'
         }}>
             <ModalCreate />
         </div>

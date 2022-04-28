@@ -100,7 +100,7 @@ div {
   .ModalCreate {
     position: absolute;
     background-color: #F8F8F8;
-    isplay: flex;
+    display: flex;
     justify-content: space-around;
     flex-direction: column;
     width: 300px;

@@ -3,3 +3,12 @@
     flex-flow: row;
     justify-content: space-around;
 }
+
+.RequestTable{
+    display: grid;
+    gap: 1rem;
+    margin:1rem;
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 1rem;
+}

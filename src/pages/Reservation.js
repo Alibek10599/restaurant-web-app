@@ -12,13 +12,24 @@ const [modalY, setModalY] = useState(0);
 const [squareTables, setSquareTables] = useState([]);
 const [modalOpen, setModalOpen] = useState(false);
 const [tables, setTables] = useState([])
+const [reservations, setReservations] = useState([])
 
 useEffect(() => {
-    axios.post('http://localhost:3000/api/restaurant/findExtended', {id : 3}, {
+    axios.post('http://192.168.0.145:3000/api/restaurant/findExtended', {id : 2}, {
         headers: {
-          'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiTmF2YXQiLCJpYXQiOjE2NTA3MDg0OTl9.bLO8BK-1dBlQ7U2nSlnXKqhx8fCQ7dwgH8WQDe0-mWI'
+          'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQWxpYmVrIiwiaWF0IjoxNjUxMDc2MTU1fQ.gkbM_tP8alBPjuRYqYVCYVm1ppoZm7c-4dGSC8VvFZc'
         }})
         .then(json => setSquareTables(json.data.tables))
+
+  }, [])
+
+  useEffect(() => {
+
+    axios.get('http://192.168.0.145:3000/api/reservation/list',  {
+        headers: {
+          'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiQWxpYmVrIiwiaWF0IjoxNjUxMDc2MTU1fQ.gkbM_tP8alBPjuRYqYVCYVm1ppoZm7c-4dGSC8VvFZc'
+        }}).then(json => setReservations(json.data))
+    
   }, [])
 
 const openModal = (e) => {
@@ -33,6 +44,7 @@ const openModal = (e) => {
 }
 
 const logTable = (e) => {
+    e.preventDefault();
     console.log(e.target.value);
 }
 
@@ -50,6 +62,7 @@ return (
               key={index}
               index={index}
               table={table}
+              onClick={logTable}
               />)
             }
             <ModalCreate
@@ -58,7 +71,6 @@ return (
               open={modalOpen}
               setModalOpen={setModalOpen}
               onContextMenu={openModal}
-              onClick={logTable}
               />
            
           </div>
@@ -67,7 +79,13 @@ return (
             <div>
                 Requests
             </div>
-            <RequestTable/>
+            {
+                reservations.filter((res) => res.status === 'pending').map((reservation, index) => <RequestTable
+                key={index}
+                index={index}
+                reservation={reservation}
+                />)
+            }
         
         </div>
         <span>{squareTables.length}</span>
