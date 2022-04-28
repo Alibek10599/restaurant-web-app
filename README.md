@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Before launching project
+make sure https://github.com/Alibek10599/restaraunt-booking is properly set up and running on port you are requesting
 
 In the project directory, you can run:
 
